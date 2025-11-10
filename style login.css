@@ -1,0 +1,18 @@
+/* Login page styling */
+.logo-text {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+}
+.logo-line {
+  height: 2px;
+  width: 30px;
+  background-color: #333;
+}
+.logo-wing {
+  width: 40px;
+  height: auto;
+}
+.card-body form label {
+  font-weight: 500;
+}

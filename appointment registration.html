@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Appointment Registration - Wings</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="index.html">Wings</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"> <a class="nav-link" href="post.html">Posts</a></li>
+        <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+        <li class="nav-item"><a class="nav-link" href="registration.html">Register</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container my-5" style="max-width: 700px;">
+  <h2 class="text-center mb-4">Book an Appointment</h2>
+  <form>
+    <div class="mb-3">
+      <label for="fullName" class="form-label">Full Name</label>
+      <input type="text" class="form-control" id="fullName" placeholder="Enter your full name" required>
+    </div>
+    <div class="mb-3">
+      <label for="email" class="form-label">Email Address</label>
+      <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+    </div>
+    <div class="mb-3">
+      <label for="phone" class="form-label">Phone Number</label>
+      <input type="tel" class="form-control" id="phone" placeholder="Enter your phone number" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="address" class="form-label">Address (if physical work)</label>
+      <textarea class="form-control" id="address" rows="3" placeholder="Enter address if applicable"></textarea>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6 mb-3">
+        <label for="date" class="form-label">Preferred Date</label>
+        <input type="date" class="form-control" id="date" required>
+      </div>
+      <div class="col-md-6 mb-3">
+        <label for="time" class="form-label">Preferred Time</label>
+        <input type="time" class="form-control" id="time" required>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="serviceType" class="form-label">Type of Work / Service</label>
+      <select class="form-select" id="serviceType" required>
+        <option selected disabled>Choose...</option>
+        <option value="art">Art / Illustration</option>
+        <option value="fashion">Fashion Design</option>
+        <option value="digital">Digital Work</option>
+        <option value="other">Other</option>
+      </select>
+    </div>
+    <div class="mb-3">
+      <label for="description" class="form-label">Description of Work</label>
+      <textarea class="form-control" id="description" rows="3" placeholder="Provide details about the work or idea"></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary w-100">Submit Appointment</button>
+  </form>
+</div>
+
+<footer class="bg-dark text-white text-center p-3">
+  &copy; 2025 Wings | All Rights Reserved
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

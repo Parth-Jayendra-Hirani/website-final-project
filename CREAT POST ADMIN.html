@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WT Wings – Create Post</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    .error-text {
+      font-size: 14px;
+      color: red;
+      display: none;
+    }
+    .shake {
+      animation: shake .3s;
+    }
+    @keyframes shake {
+      0% { transform: translateX(0); }
+      25% { transform: translateX(-4px); }
+      50% { transform: translateX(4px); }
+      75% { transform: translateX(-4px); }
+      100% { transform: translateX(0); }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg" style="background-color:#0d6efd;">
+  <div class="container-fluid">
+    <img src="wing 1.png" style="height: 70px;">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#adminNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="adminNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link text-white" href="work dashboard.html">Dashboard</a></li>
+        <li class="nav-item"><a class="nav-link" href="website profile.html">Profile</a></li>
+        <li class="nav-item"><a class="nav-link text-white active" href="CREAT POST ADMIN.html">Create Post</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="apoinment.html">Appointments</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="settings admin.html">Settings</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<section class="py-4" style="background:#f5f6fa; min-height:100vh;">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="card border-0 shadow-sm">
+          <div class="card-body p-4">
+            <h3 class="fw-semibold mb-4 text-center text-primary">Create a New Post</h3>
+
+            <form id="postForm">
+
+              <div class="mb-3">
+                <label class="form-label fw-semibold">Post Title</label>
+                <input type="text" class="form-control" id="postTitle" placeholder="Enter an engaging title">
+                <div class="error-text" id="titleError">Title is required</div>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label fw-semibold">Description</label>
+                <textarea class="form-control" id="postDescription" rows="5" placeholder="Describe your work, project, or idea..."></textarea>
+                <div class="error-text" id="descError">Description cannot be empty</div>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label fw-semibold">Category</label>
+                <select class="form-select" id="postCategory">
+                  <option selected value="">Select a category...</option>
+                  <option value="design">Graphic Design</option>
+                  <option value="development">Web Development</option>
+                  <option value="photography">Photography</option>
+                  <option value="writing">Content Writing</option>
+                </select>
+                <div class="error-text" id="catError">Please select a category</div>
+              </div>
+
+              <div class="mb-4">
+                <label class="form-label fw-semibold">Upload Image/Video</label>
+                <input class="form-control" type="file" id="postImage">
+                <div class="error-text" id="fileError">Please upload a file</div>
+              </div>
+
+              <div class="d-grid">
+                <button type="submit" class="btn btn-primary fw-semibold py-2">Publish Post</button>
+              </div>
+
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="text-center text-muted py-3 bg-white border-top">
+  © 2025 WT Wings – Admin Panel
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+document.getElementById("postForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+  let valid = true;
+
+  function showError(inputId, errorId) {
+    valid = false;
+    const input = document.getElementById(inputId);
+    document.getElementById(errorId).style.display = "block";
+    input.classList.add("shake");
+    setTimeout(() => input.classList.remove("shake"), 300);
+  }
+
+  function hideError(errorId) {
+    document.getElementById(errorId).style.display = "none";
+  }
+
+  const title = postTitle.value.trim();
+  const desc = postDescription.value.trim();
+  const cat = postCategory.value;
+  const file = postImage.value;
+
+  title ? hideError("titleError") : showError("postTitle", "titleError");
+  desc ? hideError("descError") : showError("postDescription", "descError");
+  cat ? hideError("catError") : showError("postCategory", "catError");
+  file ? hideError("fileError") : showError("postImage", "fileError");
+
+  if (valid) {
+    alert("✅ Post Published Successfully!");
+    this.reset();
+  }
+});
+</script>
+
+</body>
+</html>

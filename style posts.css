@@ -1,0 +1,15 @@
+.card-body img.img-fluid {
+  max-height: 400px;
+  object-fit: cover;
+}
+
+.btn-link i {
+  font-size: 1.2rem;
+  vertical-align: middle;
+  margin-right: 5px;
+  
+}
+
+.btn-link:hover {
+  color: #0d6efd; /* Bootstrap primary color on hover */
+}
